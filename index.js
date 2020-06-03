@@ -62,7 +62,8 @@ Write a function called `inning` that generates a random number of points that a
 and 2. */
 
 function inning(max){
-return Math.floor(Math.random() * Math.floor(max));
+let score = Math.floor(Math.random() * Math.floor(max));
+return score;
 }
 console.log(inning(3));
 
@@ -82,11 +83,22 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
-}
+function finalScore(inning, gameLength){
+  let home = 0;
+  let away = 0;
+  for ( let i=0; i<gameLength; i++){
+    home = inning(3) + home;
+    away = inning(3) + away;
+    }
+return { "home": home, "away": away};
+    // if (home > away){
+    //   return "Home Team Wins";
+    // } else {
+    //   return "Away Team Wins";
+    // }
+  }
+  
+console.log(finalScore(inning,9));
 
 /* Task 4: 
 
@@ -109,8 +121,16 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inning, gameLength) {
+  let home = 0;
+  let away = 0;
+  let eachInning = ["1st","2nd","3rd","4th","5th","6th","7th","8th","9th"];
+  for ( let i=0; i<gameLength; i++){
+    home = inning(3) + home;
+    away = inning(3) + away;
+    console.log((`${eachInning[i]} inning: ${home} - ${away}`));
+    }
+    console.log((`Final Score: ${home} - ${away}`));
 }
-
+console.log(scoreboard(inning, 9));
 

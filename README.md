@@ -42,6 +42,10 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+
+Closure allows an inner function to have access to  the outer functions variables.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +67,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+Closure is used when the function is called inside of personalDice. This is shown when anonymous function is being returned within the personalDice function.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+The name is always the same "Dan" but the roll of the dice could change.
+
 c. What is the lexical scope of `newRoll`? 
+
+newRoll belongs to the anonymous function and can only be access from that function. personalDice function has no access to newRoll variable.
 
 ### Task 3 - Stretch Goals
 
