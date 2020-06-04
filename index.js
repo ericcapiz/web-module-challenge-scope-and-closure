@@ -28,15 +28,16 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
- * Counter 2 uses a global variable scope and counter one has a function scope that can only be called upon within that function. 
+ * Counter 2 uses a global variable scope and counter 1 has a function scope that can only be called upon within that function. 
  * 
  * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
- * Counter one uses a closer because the counterMaker function is being stored in the counter1 variable. The inner function "remembers" the 
- * environment in which it was created.
+ * Counter 1 uses closure because the inner function has access to the outer functions variable.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ * counter 1 would be ideal if you need to use 
  *
 */
 
@@ -62,10 +63,10 @@ Write a function called `inning` that generates a random number of points that a
 and 2. */
 
 function inning(max){
-let score = Math.floor(Math.random() * Math.floor(max));
+let score = Math.floor(Math.random() * max); //returns a random number between 0 and the value of max when the function is envoked.
 return score;
 }
-console.log(inning(3));
+console.log(inning(3)); 
 
 
 /* Task 3: finalScore()
@@ -91,11 +92,6 @@ function finalScore(inning, gameLength){
     away = inning(3) + away;
     }
 return { "home": home, "away": away};
-    // if (home > away){
-    //   return "Home Team Wins";
-    // } else {
-    //   return "Away Team Wins";
-    // }
   }
   
 console.log(finalScore(inning,9));
